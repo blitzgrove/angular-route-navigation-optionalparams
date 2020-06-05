@@ -1,0 +1,18 @@
+<h3>
+  <input [(ngModel)]="todo.done" type="checkbox"/>
+  <a [title]="todo.name + ' details'" >
+    {{ todo.name }}
+  </a>
+  <button routerLink="/dashboard">
+    Cancel edit
+  </button>
+  <button (mouseup)="gotoEdit()">
+    Edit todo
+  </button>
+</h3>
+<p>Urgency: {{todo.urgency}}</p>
+<p *ngIf="todo.description">
+  Description: {{ todo.description }}
+</p>
+
+<router-outlet></router-outlet>
